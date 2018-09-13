@@ -1,0 +1,22 @@
+api/node_modules
+# compiled output
+team-example/dist
+team-example/tmp
+team-example/out-tsc
+
+# dependencies
+team-example/node_modules
+
+# misc
+team-example/.sass-cache
+team-example/connect.lock
+team-example/coverage
+team-example/libpeerconnection.log
+team-example/npm-debug.log
+team-example/yarn-error.log
+team-example/testem.log
+team-example/typings
+
+# System Files
+team-example/.DS_Store
+team-example/Thumbs.db
