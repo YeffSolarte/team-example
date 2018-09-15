@@ -11,7 +11,9 @@ var Employee = Schema({
     hire_date : String,
     status : Number,
     job_title : String,
-    tip_rate : String
+    tip_rate : String,
+    versionKey: false
 });
+
 
 module.exports = mongoose.model('Employee', Employee);

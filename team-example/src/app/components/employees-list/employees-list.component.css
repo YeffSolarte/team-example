@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+
+.container{
+  padding-top : 30px;
+}
+
+.redirect-button{
+  margin-top: 30px;
+}
+
+.redirect-button a{
+  color: white;
+  text-decoration: none;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

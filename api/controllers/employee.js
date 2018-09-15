@@ -67,18 +67,16 @@ function getEmployee(req, res){
 }
 
 function getEmployees(req, res) {
-    var page = 1;
-    var itemsPerPage = 5;
-    if(req.params.page) page = req.params.page;
-    Employee.find().sort('_id').paginate(page, itemsPerPage, (err, employees, total) => {
+    Employee.find().sort('_id').exec((err, employees) => {
         if(err) return res.status(500).send({error : true, message:'Error en la peticion'});
-        if(employees){
-            res.status(200).send({error : false, data : {employees, total, pages : Math.ceil(total/itemsPerPage)}});
-        } else {
-            res.status(404).send({error : true, message:'No hay Empleados Disponibles'});
+        else {
+            if(employees){
+                res.status(200).send({error : false, data : employees});
+            } else {
+                res.status(404).send({error : true, message:'No hay Empleados Disponibles'});
+            }
         }
     })
-
 }
 
 function uptdateEmployee(req, res){
