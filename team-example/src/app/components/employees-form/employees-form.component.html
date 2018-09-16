@@ -1,3 +1,95 @@
-<p>
-  employees-form works!
-</p>
+<div class="container">
+  <h4>New Employee</h4>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+      <div class="col">
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name">
+            <mat-error *ngIf="employeeForm.controls['name'].errors && (employeeForm.controls['name'].dirty || employeeForm.controls['name'].touched)">
+              <p *ngIf="employeeForm.controls['name'].errors.required">Name is required</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Dob" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker disabled="false"></mat-datepicker>
+            <mat-error *ngIf="employeeForm.controls['dob'].errors && (employeeForm.controls['dob'].dirty || employeeForm.controls['dob'].touched)">
+              <p *ngIf="employeeForm.controls['dob'].errors.required">Date of Birthday is required</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+             <input type="text" placeholder="Country" aria-label="Country" matInput formControlName="country" [matAutocomplete]="auto">
+             <mat-autocomplete #auto="matAutocomplete">
+               <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+                 {{ option.name }}
+               </mat-option>
+             </mat-autocomplete>
+            <mat-error *ngIf="employeeForm.controls['country'].errors && (employeeForm.controls['country'].dirty || employeeForm.controls['country'].touched)">
+              <p *ngIf="employeeForm.controls['country'].errors.required">Country is required</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Username" formControlName="user_name">
+            <mat-error *ngIf="employeeForm.controls['user_name'].errors && (employeeForm.controls['user_name'].dirty || employeeForm.controls['user_name'].touched)">
+              <p *ngIf="employeeForm.controls['user_name'].errors.required">Username is required</p>
+              <p *ngIf="employeeForm.controls['user_name'].errors.userNameInvalid">Special Characters are invalids</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="pickerHire" placeholder="Hire Date" formControlName="hire_date">
+            <mat-datepicker-toggle matSuffix [for]="pickerHire"></mat-datepicker-toggle>
+            <mat-datepicker #pickerHire disabled="false"></mat-datepicker>
+            <mat-error *ngIf="employeeForm.controls['hire_date'].errors && (employeeForm.controls['hire_date'].dirty || employeeForm.controls['hire_date'].touched)">
+              <p *ngIf="employeeForm.controls['hire_date'].errors.required">Hire Date is required</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-slide-toggle formControlName="status">Status</mat-slide-toggle>
+        </div>
+      </div>
+      <div class="col">
+        <span class="area-label">Area</span>
+        <mat-button-toggle-group #groupA="matButtonToggleGroup" (change)="changeArea()">
+          <mat-button-toggle value="services" checked>
+            <span>Servicies</span>
+          </mat-button-toggle>
+          <mat-button-toggle value="kitchen" >
+            <span>Kitchen</span>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="example-container">
+
+          <mat-form-field>
+            <mat-select placeholder="Job Title"  formControlName="job_title" [disabled]="!groupA.value">
+              <mat-option *ngFor="let title of jobTitles[groupA.value]" [value]="title">
+                {{title}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="employeeForm.controls['job_title'].errors && (employeeForm.controls['job_title'].dirty || employeeForm.controls['job_title'].touched)">
+              <p *ngIf="employeeForm.controls['job_title'].errors.required">Job Title is required</p>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field *ngIf="employeeForm.value.job_title === 'Waitress' || employeeForm.value.job_title === 'Dining room manager'">
+            <input matInput placeholder="Tip Rate" formControlName="tip_rate" required>
+            <mat-error *ngIf="employeeForm.controls['tip_rate'].errors && (employeeForm.controls['tip_rate'].dirty || employeeForm.controls['tip_rate'].touched)">
+              <p *ngIf="employeeForm.controls['tip_rate'].errors.required">Tip Rate is required</p>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row footer-bottons">
+      <div>
+        <button mat-raised-button (click)="backFunction()">
+          <mat-icon >navigate_before</mat-icon>  Back
+        </button>
+        <button mat-raised-button color="primary" type="submit">Create</button>
+        <!--<button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid">Create</button>-->
+      </div>
+
+    </div>
+  </form>
+
+
+</div>
