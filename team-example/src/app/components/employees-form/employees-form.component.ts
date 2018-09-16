@@ -74,22 +74,31 @@ export class EmployeesFormComponent implements OnInit {
   onSubmit(){
     if(this.employeeForm.valid){
       let assign = this.employeeForm.value;
-      let employee = new Employee(assign.id, assign.name, assign.dob, assign.country,assign.user_name,assign.hire_date, assign.status, assign.hob_title, assign.tip_rate);
-      if(employee._id){
+      let employee = new Employee(assign.id, assign.name, assign.dob, assign.country,assign.user_name,assign.hire_date, assign.status, assign.job_title, assign.tip_rate);
+      if(!employee._id){
         this._emService.create(employee).subscribe(response => {
           console.log(response);
-          this._emService.openDialog("Employee Created");
-          this.employeeForm.reset();
-          this._router.navigate(['/']);
+          if(!response.error){
+            this._emService.openDialog("Employee Created");
+            this.employeeForm.reset();
+            this._router.navigate(['/']);
+          } else {
+            this._emService.openDialog("We have a problem");
+          }
+
         }, error => {
 
         })
       } else {
-        this._emService.update(employee).subscribe(response => {
+        this._emService.update(employee, '_id').subscribe(response => {
           console.log(response);
-          this._emService.openDialog("Employee Modified");
-          this.employeeForm.reset();
-          this._router.navigate(['/']);
+          if(!response.error){
+            this._emService.openDialog("Employee Modified");
+            this.employeeForm.reset();
+            this._router.navigate(['/']);
+          } else {
+            this._emService.openDialog("We have a problem");
+          }
         }, error => {
 
         })

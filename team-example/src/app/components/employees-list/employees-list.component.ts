@@ -62,9 +62,15 @@ export class EmployeesListComponent implements OnInit {
 
   deleteEmploye(id: string | number){
     this._emService.delete(id).subscribe(response => {
-      console.log(response);
+      if(!response.error){
+        this._emService.openDialog("Employee Deleted");
+        this.getData();
+      } else {
+        this._emService.openDialog("We Have a Problem");
+      }
     }, error => {
       console.log(error);
+      this._emService.openDialog("We Have a Problem");
     })
   }
 

@@ -14,7 +14,7 @@ export abstract class BaseService<TEntity>{
     this._dialog = dialog;
   }
 
-  create(entity:TEntity): Observable<TEntity> {
+  create(entity:TEntity): Observable<any> {
     let headers = new HttpHeaders().set('Content-type', 'application/json');
     return this._http.post<TEntity>(
       GLOBAL.url + this._path,
@@ -29,17 +29,17 @@ export abstract class BaseService<TEntity>{
       {headers: headers});
   }
 
-  update(entity:TEntity): Observable<any> {
+  update(entity:TEntity, identify : string): Observable<any> {
     let headers = new HttpHeaders().set('Content-type', 'application/json');
     return this._http.put<TEntity>(
-      GLOBAL.url + this._path,
+      GLOBAL.url + this._path + '/' + entity[identify],
       entity,
       {headers: headers});
   }
 
   delete(id : string | number): Observable<any> {
     let headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this._http.get(`${GLOBAL.url + this._path}/${id}`,{headers: headers});
+    return this._http.delete(`${GLOBAL.url + this._path}/${id}`,{headers: headers});
   }
 
   openDialog(text:string): void {
