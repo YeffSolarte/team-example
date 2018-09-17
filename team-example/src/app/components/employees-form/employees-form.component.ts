@@ -8,6 +8,9 @@ import {Observable} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EmployeesListService} from "../employees-list/employees-list.service";
 import {Employee} from "../../models/employee";
+import { Store} from "@ngrx/store";
+import { AppState} from "../../app.state";
+import * as EmployeeActions from './../../actions/employee.actions';
 const moment = _moment;
 
 
@@ -53,6 +56,7 @@ export class EmployeesFormComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private _route : ActivatedRoute,
               private _router: Router,
+              private store : Store<AppState>,
               private _emService:EmployeesListService) {
     this.filteredOptions = this.employeeForm.valueChanges
       .pipe(
@@ -74,13 +78,15 @@ export class EmployeesFormComponent implements OnInit {
   onSubmit(){
     if(this.employeeForm.valid){
       let assign = this.employeeForm.value;
-      let employee = new Employee(assign.id, assign.name, assign.dob, assign.country,assign.user_name,assign.hire_date, assign.status, assign.job_title, assign.tip_rate);
+      let employee = new Employee(assign.id, assign.name, assign.dob, assign.country,assign.user_name,assign.hire_date, assign.status, assign.job_title, this._emService.getAge(assign.dob), "", assign.tip_rate);
       if(!employee._id){
         this._emService.create(employee).subscribe(response => {
           console.log(response);
           if(!response.error){
+            employee._id = response.data._id;
             this._emService.openDialog("Employee Created");
             this.employeeForm.reset();
+            this.store.dispatch(new EmployeeActions.AddEmployee(employee));
             this._router.navigate(['/']);
           } else {
             this._emService.openDialog("We have a problem");

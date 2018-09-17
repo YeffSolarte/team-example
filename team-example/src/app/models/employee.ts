@@ -7,6 +7,8 @@ export class Employee{
               public hire_date : string,
               public status : number,
               public job_title : string,
+              public age: number,
+              public options: string,
               public tip_rate : string){
 
   }

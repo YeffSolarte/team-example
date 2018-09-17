@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MatButtonToggleModule, MatSlideToggleModule, MatAutocompleteModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatButtonModule , MatNativeDateModule, MatDatepickerModule, MatSelectModule, MatIconModule } from '@angular/material';
 import { EmployeesListService } from "./components/employees-list/employees-list.service";
 import { MyDialogComponent} from "./shared/my-dialog/my-dialog.component";
+import { StoreModule } from "@ngrx/store";
+import { employeeReducer } from "./reducers/employee.reducer";
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { MyDialogComponent} from "./shared/my-dialog/my-dialog.component";
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({
+      employee : employeeReducer
+    })
   ],
   entryComponents : [MyDialogComponent],
   providers: [

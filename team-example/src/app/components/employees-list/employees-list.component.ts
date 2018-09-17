@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { MatTableDataSource } from '@angular/material';
-import { Router, ActivatedRoute, Params} from "@angular/router";
-import { Employee} from "../../models/employee";
+import { Router, ActivatedRoute} from "@angular/router";
 import { EmployeesListService } from "./employees-list.service";
-
-export interface EmployeesList extends Employee{
-  age: number;
-  options: string;
-}
+import { Observable } from "rxjs";
+import { Store} from "@ngrx/store";
+import { AppState} from "../../app.state";
+import * as EmployeeActions from './../../actions/employee.actions';
+import {Employee} from "../../models/employee";
 
 @Component({
   selector: 'app-employees-list',
@@ -20,51 +19,50 @@ export class EmployeesListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'age', 'user_name', 'hire_date', 'options'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  ELEMENT_DATA: EmployeesList[] = [];
+  employees : Observable<any>;
   dataSource;
-  constructor(private _route : ActivatedRoute, private _router: Router, private _emService:EmployeesListService) { }
+  constructor(private _route : ActivatedRoute,
+              private _router: Router,
+              private store : Store<AppState>,
+              private _emService:EmployeesListService) {
+    this.employees = store.select('employee');
+  }
 
   ngOnInit() {
     this.getData();
   }
 
   getData(){
-    this._emService.get().subscribe(response => {
-      console.log(response);
-      if (!response.error) {
-        response.data.forEach(val => {
-          val.age = this.getAge(val.dob);
-          val.options = '';
-        });
-        this.ELEMENT_DATA = response.data;
-        this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+    this.employees.subscribe(response => {
+      if(!response.length){
+        this._emService.get().subscribe(response => {
+          if (!response.error) {
+            response.data.forEach(val => {
+              val.age = this._emService.getAge(val.dob);
+              val.options = '';
+            });
+            this.store.dispatch(new EmployeeActions.AddEmployees(response.data));
+          } else {
+
+          }
+        }, err => {
+          console.log(err);
+        })
+      } else {
+        this.dataSource = new MatTableDataSource(response);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        console.log(this.dataSource);
-      } else {
-
       }
-    }, err => {
-      console.log(err);
-    })
+
+    });
+
   }
 
-  getAge(date) {
-    let today = new Date();
-    let birthday = new Date(date);
-    let old = today.getFullYear() - birthday.getFullYear();
-    let m = today.getMonth() - birthday.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
-      old--;
-    }
-    return old;
-  }
-
-  deleteEmploye(id: string | number){
-    this._emService.delete(id).subscribe(response => {
+  deleteEmploye(entity: Employee){
+    this._emService.delete(entity._id).subscribe(response => {
       if(!response.error){
         this._emService.openDialog("Employee Deleted");
-        this.getData();
+        this.store.dispatch(new EmployeeActions.RemoveEmployee(entity._id));
       } else {
         this._emService.openDialog("We Have a Problem");
       }
@@ -77,8 +75,5 @@ export class EmployeesListComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
-
 
 }
