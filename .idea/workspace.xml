@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea75b196-5c8b-486c-af64-086c732a0a67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/team-example/src/app/effects/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/src/app/actions/employee.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/actions/employee.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/app.routing.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/src/app/reducers/employee.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/reducers/employee.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-example/src/app/shared/base.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/team-example/src/app/shared/base.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,101 +20,61 @@
     <session id="137152585">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="Angular2LanguageService" value="3" />
+          <entry key="Angular2LanguageService" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="5" />
+          <entry key="html" value="6" />
+          <entry key="json" value="1" />
           <entry key="md" value="1" />
-          <entry key="ts" value="40" />
+          <entry key="ts" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="5" />
+          <entry key="HTML" value="6" />
+          <entry key="JSON" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="40" />
+          <entry key="TypeScript" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="370" />
+          <entry key="html" value="374" />
           <entry key="md" value="37" />
-          <entry key="ts" value="2557" />
+          <entry key="ts" value="2563" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="369" />
+          <entry key="HTML" value="373" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="37" />
-          <entry key="TypeScript" value="2557" />
+          <entry key="TypeScript" value="2563" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/team-example/src/app/guards/confirmation.guard.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+            <state relative-caret-position="-364">
+              <caret line="147" column="74" selection-start-line="147" selection-start-column="74" selection-end-line="147" selection-end-column="74" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/team-example/src/app/app.routing.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#123#217#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="70" column="116" selection-start-line="70" selection-start-column="111" selection-end-line="70" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -147,19 +97,19 @@
         <option value="$PROJECT_DIR$/team-example/src/app/models/employee.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/app.state.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/shared/base.service.ts" />
-        <option value="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html" />
         <option value="$PROJECT_DIR$/team-example/src/app/effects/employee.effects.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/effects/index.ts" />
-        <option value="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.html" />
         <option value="$PROJECT_DIR$/team-example/src/app/reducers/employee.reducer.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/actions/employee.actions.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/effects/employee/employee.effects.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/guards/confirmation.guard.ts" />
-        <option value="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/team-example/src/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html" />
+        <option value="$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.ts" />
+        <option value="$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts" />
       </list>
     </option>
   </component>
@@ -200,7 +150,45 @@
             <path>
               <item name="team-example" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-example" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="team-example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="employees-form" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -242,12 +230,13 @@
       <updated>1537155101262</updated>
       <workItem from="1537155105440" duration="314000" />
       <workItem from="1537155559847" duration="1534000" />
-      <workItem from="1537206706283" duration="17396000" />
+      <workItem from="1537206706283" duration="17453000" />
+      <workItem from="1537229444496" duration="252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19244000" />
+    <option name="totallyTimeSpent" value="19553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -266,7 +255,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -377,41 +366,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/team-example/src/app/actions/employee.actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="99" column="2" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="2" />
-          <folding>
-            <element signature="e#13#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/team-example/src/app/guards/confirmation.guard.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="70" column="116" selection-start-line="70" selection-start-column="111" selection-end-line="70" selection-end-column="116" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/team-example/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -420,23 +376,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/team-example/src/app/guards/confirmation.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/api/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -444,17 +390,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team-example/src/app/guards/confirmation.guard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team-example/src/app/actions/employee.actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#123#217#0" expanded="true" />
+            <element signature="e#13#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-list/employees-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="500">
+          <caret line="46" column="55" lean-forward="true" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="58" column="45" lean-forward="true" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team-example/src/app/components/employees-form/employees-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="147" column="74" selection-start-line="147" selection-start-column="74" selection-end-line="147" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

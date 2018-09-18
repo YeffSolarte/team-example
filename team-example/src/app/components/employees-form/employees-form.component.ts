@@ -11,7 +11,7 @@ import {Employee} from "../../models/employee";
 import { Store} from "@ngrx/store";
 import { AppState} from "../../app.state";
 import * as EmployeeActions from './../../actions/employee.actions';
-import { CanComponentDeactivate } from './../../guards/confirmation.guard';
+import { CanComponentDeactivate } from '../../guards/confirmation.guard';
 
 const moment = _moment;
 
@@ -130,7 +130,7 @@ export class EmployeesFormComponent implements OnInit, CanComponentDeactivate {
             employee._id = response.data._id;
             this._emService.openDialog("Employee Created");
             this.employeeForm.reset();
-            this.store.dispatch(new EmployeeActions.AddEmployee(employee));
+            this.store.dispatch(new EmployeeActions.AddEmployeeSuccess(employee));
             this._router.navigate(['/']);
           } else {
             this._emService.openDialog("We have a problem");
@@ -145,7 +145,7 @@ export class EmployeesFormComponent implements OnInit, CanComponentDeactivate {
           if(!response.error){
             this._emService.openDialog("Employee Modified");
             this.employeeForm.reset();
-            this.store.dispatch(new EmployeeActions.UpdateEmployee(employee));
+            this.store.dispatch(new EmployeeActions.UpdateEmployeeSuccess(employee));
             this._router.navigate(['/']);
           } else {
             this._emService.openDialog("We have a problem");

@@ -45,7 +45,7 @@ export class EmployeesListComponent implements OnInit {
     this._emService.delete(entity._id).subscribe(response => {
       if(!response.error){
         this._emService.openDialog("Employee Deleted");
-        this.store.dispatch(new EmployeeActions.RemoveEmployee(entity._id));
+        this.store.dispatch(new EmployeeActions.RemoveEmployeeSuccess(entity._id));
       } else {
         this._emService.openDialog("We Have a Problem");
       }
