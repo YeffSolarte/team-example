@@ -1,5 +1,7 @@
 <div class="container">
-  <h4>New Employee</h4>
+  <h4 *ngIf="!selectedId">New Employee</h4>
+  <h4 *ngIf="selectedId && viewing">Viewing: {{employeeForm.value.name}}</h4>
+  <h4 *ngIf="selectedId && !viewing">Editing: {{employeeForm.value.name}}</h4>
   <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
     <div class="row">
 
@@ -14,7 +16,7 @@
           <mat-form-field>
             <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Dob (mm/dd/yyy)" formControlName="dob">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker disabled="false"></mat-datepicker>
+            <mat-datepicker #picker ></mat-datepicker>
             <mat-error *ngIf="employeeForm.controls['dob'].errors && (employeeForm.controls['dob'].dirty || employeeForm.controls['dob'].touched)">
               <p *ngIf="employeeForm.controls['dob'].errors.required">Date of Birthday is required</p>
             </mat-error>
@@ -40,7 +42,7 @@
           <mat-form-field>
             <input matInput [matDatepicker]="pickerHire" placeholder="Hire Date (mm/dd/yyy)" formControlName="hire_date">
             <mat-datepicker-toggle matSuffix [for]="pickerHire"></mat-datepicker-toggle>
-            <mat-datepicker #pickerHire disabled="false"></mat-datepicker>
+            <mat-datepicker #pickerHire></mat-datepicker>
             <mat-error *ngIf="employeeForm.controls['hire_date'].errors && (employeeForm.controls['hire_date'].dirty || employeeForm.controls['hire_date'].touched)">
               <p *ngIf="employeeForm.controls['hire_date'].errors.required">Hire Date is required</p>
             </mat-error>
@@ -50,19 +52,19 @@
       </div>
       <div class="col">
         <span class="area-label">Area</span>
-        <mat-button-toggle-group #groupA="matButtonToggleGroup" (change)="changeArea()">
-          <mat-button-toggle value="services" checked>
+        <mat-button-toggle-group #group="matButtonToggleGroup" (change)="changeArea(group.value)" [disabled]="viewing">
+          <mat-button-toggle value="services">
             <span>Servicies</span>
           </mat-button-toggle>
-          <mat-button-toggle value="kitchen" >
+          <mat-button-toggle value="kitchen">
             <span>Kitchen</span>
           </mat-button-toggle>
         </mat-button-toggle-group>
         <div class="example-container">
 
           <mat-form-field>
-            <mat-select placeholder="Job Title"  formControlName="job_title" [disabled]="!groupA.value">
-              <mat-option *ngFor="let title of jobTitles[groupA.value]" [value]="title">
+            <mat-select matInput placeholder="Job Title"  formControlName="job_title">
+              <mat-option *ngFor="let title of jobTitles[groupA]" [value]="title">
                 {{title}}
               </mat-option>
             </mat-select>
@@ -84,7 +86,7 @@
         <button mat-raised-button (click)="backFunction()">
           <mat-icon >navigate_before</mat-icon>  Back
         </button>
-        <button mat-raised-button color="primary" type="submit">Create</button>
+        <button mat-raised-button color="primary" *ngIf="!viewing" type="submit">Guardar</button>
         <!--<button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid">Create</button>-->
       </div>
 

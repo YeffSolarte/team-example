@@ -30,6 +30,7 @@ export abstract class BaseService<TEntity>{
   }
 
   update(entity:TEntity, identify : string): Observable<any> {
+    console.log("update");
     let headers = new HttpHeaders().set('Content-type', 'application/json');
     return this._http.put<TEntity>(
       GLOBAL.url + this._path + '/' + entity[identify],

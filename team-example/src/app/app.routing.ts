@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 //components
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { EmployeesFormComponent } from './components/employees-form/employees-form.component';
+import {ConfirmationGuard} from "./guards/confirmation.guard";
 
 const appRoutes : Routes = [
   {
@@ -12,7 +13,8 @@ const appRoutes : Routes = [
   },
   {
     path : 'form',
-    component : EmployeesFormComponent
+    component : EmployeesFormComponent,
+    canDeactivate : [ConfirmationGuard]
   }
 ];
 

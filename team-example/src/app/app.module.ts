@@ -12,7 +12,10 @@ import { MatDialogModule, MatButtonToggleModule, MatSlideToggleModule, MatAutoco
 import { EmployeesListService } from "./components/employees-list/employees-list.service";
 import { MyDialogComponent} from "./shared/my-dialog/my-dialog.component";
 import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from '@ngrx/effects';
 import { employeeReducer } from "./reducers/employee.reducer";
+import * as effects from './effects';
+import {ConfirmationGuard} from "./guards/confirmation.guard";
 
 
 @NgModule({
@@ -44,11 +47,13 @@ import { employeeReducer } from "./reducers/employee.reducer";
     ReactiveFormsModule,
     StoreModule.forRoot({
       employee : employeeReducer
-    })
+    }),
+    EffectsModule.forRoot(effects.effects)
   ],
   entryComponents : [MyDialogComponent],
   providers: [
     appRoutingProviders,
+    ConfirmationGuard,
     EmployeesListService
   ],
   bootstrap: [AppComponent]

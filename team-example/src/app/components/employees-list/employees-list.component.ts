@@ -20,42 +20,25 @@ export class EmployeesListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   employees : Observable<any>;
+  isEmpty : boolean = true;
   dataSource;
   constructor(private _route : ActivatedRoute,
               private _router: Router,
               private store : Store<AppState>,
               private _emService:EmployeesListService) {
     this.employees = store.select('employee');
-  }
-
-  ngOnInit() {
-    this.getData();
-  }
-
-  getData(){
     this.employees.subscribe(response => {
-      if(!response.length){
-        this._emService.get().subscribe(response => {
-          if (!response.error) {
-            response.data.forEach(val => {
-              val.age = this._emService.getAge(val.dob);
-              val.options = '';
-            });
-            this.store.dispatch(new EmployeeActions.AddEmployees(response.data));
-          } else {
-
-          }
-        }, err => {
-          console.log(err);
-        })
-      } else {
+      if(response.length){
+        this.isEmpty = false;
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       }
-
     });
+  }
 
+  ngOnInit() {
+    this.store.dispatch(new EmployeeActions.GetEmployees());
   }
 
   deleteEmploye(entity: Employee){
